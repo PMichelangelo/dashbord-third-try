@@ -7,35 +7,29 @@ import settingsAltIcon from "../../assets/icons/settings-alt.svg"
 import Button from "../Button.vue";
 import Spacing from "../Spacing.vue";
 import MetricCardMini from "./MetricCardMini.vue";
-import caretIcon from "../../assets/icons/caret-arrow-up.svg"
+
 import TableMain from "./TableMain.vue";
 
 const cards = [
     {
         label: "Total budget",
-        icon: caretIcon,
         price: "$74,994.00"
     },
     {
         label: "Monthly Budget",
-        icon: caretIcon,
         price: "$12,315.89"
     },
     {
         label: "Weekly Budget",
-        icon: caretIcon,
-        price: "$3,476.15"
+        price: "$3,476.15",
+        down: true,
     },
     {
         label: "Today Budget",
-        icon: caretIcon,
         price: "$777.00"
     },
 
 ]
-
-
-
 </script>
 
 <template>

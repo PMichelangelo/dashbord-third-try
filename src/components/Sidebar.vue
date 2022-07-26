@@ -70,11 +70,14 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   width: 378px;
+  min-height: 100vh;
   height: 100%;
   background: #f8f8f8;
   opacity: 0.97;
   padding: 32px 24px;
   align-self: stretch;
+  position: sticky;
+  top: 0;
 
 }
 

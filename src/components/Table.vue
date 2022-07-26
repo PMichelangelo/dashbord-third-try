@@ -7,7 +7,7 @@ import Main from './mainComponents/Main.vue';
 <template>
     <div class="app">
         <Sidebar />
-        <div class="wrapper">
+        <div class="main">
             <Main />
         </div>
     </div>
@@ -18,6 +18,11 @@ import Main from './mainComponents/Main.vue';
 .app {
     display: flex;
     flex-direction: row;
+    width: 100%;
+}
+
+.main {
+    width: 100%;
 }
 </style>
 

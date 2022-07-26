@@ -2,14 +2,19 @@
 import Button from '../Button.vue';
 import ButtonSetings from '../ButtonSetings.vue';
 import pencilIcon from '../../assets/icons/pencil.svg'
+
+import searchIcon from '../../assets/icons/free-icon-search-149852.svg';
+import Spacing from '../Spacing.vue';
 </script>
 
 <template>
     <div class="header">
         <h1> Data Table <img src="../../assets/icons/clipboard_1f4cb.png" alt="clipboard"></h1>
         <div class="input-wrapper">
+            <img :src="searchIcon" alt="" class="input-icon">
             <input type="search" placeholder="Search">
         </div>
+        <Spacing />
         <Button primary> Add persone</Button>
         <ButtonSetings :icon="pencilIcon" />
     </div>
@@ -31,6 +36,18 @@ img {
     vertical-align: unset;
 }
 
+.input-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translate(0, -50%);
+}
+
 input {
     display: flex;
     align-items: center;
@@ -38,8 +55,7 @@ input {
     width: 459px;
     border: 1px solid #4E73F8;
     border-radius: 8px;
-    background-image: url(../../assets/icons/free-icon-search-149852.svg);
-    background-repeat: no-repeat;
+
     text-indent: 48px;
     color: #5A6474;
     font-weight: 400;

@@ -1,31 +1,31 @@
 <script setup>
 
+import caretIcon from "../../assets/icons/caret-arrow-up.svg"
+
 const props = defineProps({
     label: {
-        type: String,
-        required: true,
-    },
-    icon: {
         type: String,
         required: true,
     },
     price: {
         type: String,
         required: true,
+    },
+    down: {
+        type: Boolean,
+        default: false
     }
 })
-
-
 </script>
 
 <template>
     <div class="wrapper">
         <div class="label">
-            <p>{{ props.label }} <img :src="props.icon" /></p>
+            <p>{{ props.label }}</p>
+            <img :src="caretIcon" :class="{ down: props.down }" class="icon" />
         </div>
         <h2> {{ props.price }}</h2>
     </div>
-
 </template>
 
 <style scoped>
@@ -42,9 +42,12 @@ const props = defineProps({
     white-space: nowrap;
 }
 
-
+.icon.down {
+    transform: rotate(180deg);
+}
 
 .label {
+    display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0px;
