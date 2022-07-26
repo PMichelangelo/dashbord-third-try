@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+div,
+p,
+h1,
+h2,
+h3,
+a,
+ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #5A6474;
+    white-space:nowrap;
+}
+
+li {
+    list-style: none;
+}
