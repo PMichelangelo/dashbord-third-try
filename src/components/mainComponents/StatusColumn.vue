@@ -7,6 +7,8 @@ const props = defineProps({
 });
 </script>
 
-<template>
-  <p>{{ props.row }}</p>
+  <template>
+  <p v-bind="status in row">
+    {{ row.status }} </p>
 </template>
+

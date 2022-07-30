@@ -8,5 +8,6 @@ const props = defineProps({
 </script>
 
 <template>
-  <p>Hello world</p>
+  <p v-bind="name in row">
+    {{ row.name }} </p>
 </template>
