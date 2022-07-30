@@ -78,6 +78,7 @@ aside {
   align-self: stretch;
   position: sticky;
   top: 0;
+  border-right: 1px solid #E1E3E6;
 
 }
 

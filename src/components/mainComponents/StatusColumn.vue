@@ -12,3 +12,6 @@ const props = defineProps({
     {{ row.status }} </p>
 </template>
 
+<style scooped>
+</style>
+

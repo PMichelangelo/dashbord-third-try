@@ -96,9 +96,7 @@ const COLUMN_KEY = "status";
         <th v-for="column in columns">
           <span class="label">{{ column.label }}</span>
           <span class="icon-wrapper">
-            <span class="icon"
-              ><img src="../../assets/icons/up-arrow.svg" alt=""
-            /></span>
+            <span class="icon"><img src="../../assets/icons/up-arrow.svg" alt="" /></span>
           </span>
         </th>
       </tr>
@@ -156,6 +154,7 @@ td:nth-child(1) {
 .icon {
   margin-left: 8px;
 }
+
 
 .btn-wrapper {
   display: none;
