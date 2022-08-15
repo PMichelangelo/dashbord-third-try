@@ -40,4 +40,11 @@ div {
   line-height: 20px;
   padding: 0 7.5px;
 }
+
+@media (max-width:480px) {
+  div {
+    width: 14px;
+    height: 14px;
+  }
+}
 </style>

@@ -42,7 +42,7 @@ const menu = [
 
 <template>
   <aside>
-    <header>
+    <header class="zero">
       <AccountItem />
     </header>
     <main>
@@ -130,12 +130,21 @@ footer>p {
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  width: 330px;
+  width: 100%;
   height: 48px;
 }
 
 footer>p>img {
   margin: 0 19px;
+}
+
+@media (max-width:480px) {
+
+  aside {
+    display: none;
+    height: 48px;
+    background: #f2f9fe;
+    opacity: unset;
+  }
 }
 </style>

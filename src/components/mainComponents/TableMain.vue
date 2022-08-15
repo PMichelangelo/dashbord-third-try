@@ -2,6 +2,8 @@
 import tableIcon from "../../assets/icons/tableIcon.png";
 import UserColumn from "./UserColumn.vue";
 import StatusColumn from "./StatusColumn.vue";
+import ActionColumn from "./ActionColumn.vue";
+import { STATUS_FREE, STATUS_BUSY, STATUS_WORKING, STATUS_VACANTION } from './statuses.js'
 
 const columns = [
   {
@@ -22,67 +24,73 @@ const columns = [
     label: "role",
     key: "role",
   },
+  {
+    label: "",
+    component: ActionColumn
+  }
 ];
 
 const rows = [
   {
+    icon: tableIcon,
     name: "Roman Belic",
     email: "purchaseuikits@setproduct.com",
-    status: "Free",
+    status_id: STATUS_FREE,
     role: "Art Director 😎",
   },
   {
     name: "Sarah Smith",
     email: "sk8er@palacecrew.net",
-    status: "Busy",
+    status_id: STATUS_BUSY,
     role: "UX Writer",
   },
   {
     name: "Eleanor Pena",
     email: "lookatmyhat@mail.me",
-    status: "Working",
+    status_id: STATUS_WORKING,
     role: "UX Engineer",
   },
   {
     name: "Rachel Richards",
     email: "rondondon@nfs.org",
-    status: "Free",
+    status_id: STATUS_FREE,
     role: "UI Master",
   },
   {
     name: "Arlene McCoy",
     email: "arlenemccoyindagame@heyhey.com",
-    status: "Working",
+    status_id: STATUS_WORKING,
     role: "Product Manager",
   },
   {
     name: "Courtney Henry",
     email: "henry96@mail.com",
-    status: "Free",
+    status_id: STATUS_FREE,
     role: "HR Assistant",
   },
   {
     name: "Guy Hawkins",
     email: "thatguy@fromalaska.us",
-    status: "Busy",
+    status_id: STATUS_BUSY,
     role: "The Boss",
   },
   {
     name: "Devon Lane",
     email: "devon_dfq@eyefind.info",
-    status: "Free",
+    status_id: STATUS_VACANTION,
     role: "Full-Stack Developer",
   },
   {
     name: "Eleanor P. Junior",
     email: "epj2022@mail.com",
-    status: "Working",
+    status_id: STATUS_WORKING,
     role: "UX Engineer",
   },
   {
+
     name: "Maria Bruno",
     email: "bruno987@cast.co",
-    status: "Busy",
+    status_id: STATUS_BUSY,
     role: "Manager",
   },
 ];
@@ -121,13 +129,19 @@ table {
 }
 
 thead th {
-  padding: 24px;
+  padding: 22px 24px;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: #5a6474;
   text-align: left;
+  max-height: 64px;
+}
+
+th:nth-child(odd) .icon-wrapper {
+  display: inline-block;
+  transform: rotate(180deg);
 }
 
 tbody tr:nth-child(odd) {
@@ -139,9 +153,12 @@ tbody tr:nth-child(even) {
 }
 
 td {
-  padding: 18px 22px;
+  padding: 16px 24px;
   gap: 16px;
   color: #5a6474;
+  max-height: 64px;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 td:nth-child(1) {
@@ -149,12 +166,27 @@ td:nth-child(1) {
   font-size: 18px;
   line-height: 24px;
   color: #5a6474;
+  white-space: nowrap;
+}
+
+td:last-child {
+  padding: 0;
+}
+
+td:nth-child(4) {
+  padding-right: 0px;
 }
 
 .icon {
+  display: inline-block;
   margin-left: 8px;
+
 }
 
+th.icon:nth-child(odd) {
+  display: inline-block;
+  transform: rotate(180deg);
+}
 
 .btn-wrapper {
   display: none;
@@ -176,5 +208,16 @@ tr:hover .btn-wrapper {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+th:last-child {
+  display: none;
+  max-width: 64px;
+}
+
+@media (max-width:480px) {
+  table {
+    display: none;
+  }
 }
 </style>

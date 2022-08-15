@@ -1,6 +1,6 @@
 <script setup>
 import tableIcon from "../../assets/icons/tableIcon.png";
-import avatarIcon from "../../assets/icons/unnamed.jpg"
+
 
 const props = defineProps({
   row: {
@@ -12,9 +12,8 @@ const props = defineProps({
 
 <template>
   <div class="user_wrapper">
-    <img :src="tableIcon" alt="" class="user_avatar">
-    <p v-bind="name in row">
-      {{ row.name }} </p>
+    <img :src="row.icon" alt="" class="user_avatar">
+    <p>{{ row.name }} </p>
   </div>
 
 </template>

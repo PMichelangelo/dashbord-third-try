@@ -5,6 +5,10 @@ import pencilIcon from '../../assets/icons/pencil.svg'
 
 import searchIcon from '../../assets/icons/free-icon-search-149852.svg';
 import Spacing from '../Spacing.vue';
+import Avatar from '../Avatar.vue';
+import avatarIcon from '../../assets/icons/unnamed.jpg'
+import settingsIcon from '../../assets/icons/settings.svg'
+import emailIcon from '../../assets/icons/email.svg'
 </script>
 
 <template>
@@ -19,6 +23,24 @@ import Spacing from '../Spacing.vue';
     <Button primary> Add persone</Button>
     <ButtonSetings :icon="pencilIcon" />
   </div>
+
+  <div class="header-mobile">
+    <Avatar :icon="avatarIcon" />
+    <Button>
+      <div class="inner">
+        <span class="icon"> <img src="../../assets/icons/right-arrow.svg" alt=""
+            style="transform:rotate(180deg);width: 12px;  fill:#4E73F8"></span>
+        <span class="label"> <b>August,</b> 2021</span>
+        <span class="icon"><img src="../../assets/icons/right-arrow.svg" alt=""
+            style="width: 12px;  fill:#4E73F8"></span>
+      </div>
+    </Button>
+    <div class="btn-settings-mobile">
+      <ButtonSetings :icon="emailIcon" />
+      <ButtonSetings :icon="settingsIcon" />
+    </div>
+
+  </div>
 </template>
 
 <style scoped>
@@ -29,6 +51,7 @@ import Spacing from '../Spacing.vue';
   justify-content: space-between;
   height: 96px;
   padding: 24px;
+  gap: 24px;
 }
 
 img {
@@ -38,6 +61,7 @@ img {
 }
 
 .input-wrapper {
+  min-width: 400px;
   position: relative;
 }
 
@@ -53,7 +77,7 @@ input {
   display: flex;
   align-items: center;
   height: 48px;
-  width: 459px;
+  width: 100%;
   border: 1px solid #4E73F8;
   border-radius: 8px;
 
@@ -92,8 +116,66 @@ input::-webkit-search-cancel-button {
 
 }
 
+.header-mobile {
+  display: none;
+}
+
 input:focus {
   outline: none;
   box-shadow: 0px 0px 0px 4px rgba(78, 115, 248, 0.2);
+}
+
+.account-item {
+  display: none;
+}
+
+@media (max-width:480px) {
+  .header {
+    display: none;
+
+  }
+
+  .input-wrapper,
+  h1 {
+    display: none;
+  }
+
+
+  .header-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #f2f9fe;
+    gap: 18px
+  }
+
+  .btn-settings-mobile {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 10px
+  }
+
+  .label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #757D8A;
+    white-space: nowrap;
+  }
+
+
+
 }
 </style>

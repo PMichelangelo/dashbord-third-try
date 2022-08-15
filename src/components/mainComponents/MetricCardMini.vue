@@ -92,4 +92,24 @@ h2 {
 .wrapper:hover .icon {
   fill: #F8F8F8;
 }
+
+@media (max-width:480px) {
+  .wrapper {
+    max-height: 112px;
+    min-width: 156px;
+    padding: 18px 16px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
 </style>
